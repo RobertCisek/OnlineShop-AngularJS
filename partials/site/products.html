@@ -1,0 +1,22 @@
+</br>
+<div class="container">
+    <div class="row ">
+        <div class="col-sm-3 ml-auto">
+            <input type="text" class="form-control" placeholder="szukaj..." ng-model="search">
+            <br>
+        </div>
+    </div>
+
+    <div ng-controller="products">
+        <h1>Produkty</h1>
+        <div class="alert alert-info" ng-repeat="product in products | filter : search">
+            <span class="text-capitalize">{{product.name}}</span>
+            <br>
+            Price: {{product.price}} zł
+            <br>
+            {{product.description}}
+            </br>
+            <a href="#/product/{{$index}}" class="btn btn-primary">Edytuj</a>
+        </div>
+    </div>
+</div>
